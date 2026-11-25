@@ -3,7 +3,8 @@
 Hyfa's crochet app: granny squares, bags, colours, stitches and yarn, with realistic photos made by Cloudflare Workers AI (FLUX.2 [klein]).
 
 ## Folders
-- `public/` – the app (open `index.html`)
+- `public/index.html` – the landing page (features and install steps)
+- `public/app/` – the hookd app itself
 - `src/worker.js` – serves the app and makes realistic photos at `/api/render`
 - `wrangler.jsonc` – Cloudflare settings (turns on Workers AI as `AI`)
 
