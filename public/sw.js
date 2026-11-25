@@ -1,6 +1,6 @@
 // hookd offline support: always try the network first so updates show straight away,
 // and fall back to the saved copy when there's no connection.
-const CACHE = 'hookd-v3';
+const CACHE = 'hookd-v4';
 const FILES = ['/', '/index.html', '/app/', '/app/index.html', '/manifest.webmanifest', '/apple-touch-icon.png', '/icon-192.png', '/icon-512.png', '/favicon.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k))))); self.clients.claim(); });
